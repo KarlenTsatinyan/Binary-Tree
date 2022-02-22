@@ -1,0 +1,46 @@
+class Node:
+  def __init__(self, data):
+    self.data=data
+    self.left=None
+    self.right=None
+    
+   def insert(self, val):
+    if self.data == None:
+      self.data = Node(val)
+    else:
+      if self.left == None:
+        self.left = Node(val)
+      if self.right == None:
+        self.right = Node(val)
+        
+  def preorder(self):
+    if self.left:
+      self.left.preorder()
+    print(self.data)
+    if self.right:
+      self.right.preorder()
+
+  def inorder(self):
+    print(self.data)
+    if self.left:
+      self.left.inorder()
+    if self.right:
+      self.right.inorder()
+
+  def postorder(self):
+    if self.left:
+      self.left.postorder()
+    if self.right:
+      self.right.postorder()
+    print(self.data)
+
+
+root = Node(10)
+root.insert(12)
+root.insert(2)
+root.insert(8)
+root.insert(5)
+root.insert(3)
+
+root.preorder()
+      
